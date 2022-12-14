@@ -1,0 +1,37 @@
+.bar {
+    border: 0.1px solid rgba(255, 255, 255, 0.2);
+    width: 25rem;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+}
+
+.fill {
+    border-style: solid;
+    border-color: rgb(88 199 250 / 100%);
+    width: 10%;
+    position: absolute;
+    border-width: 0;
+    border-bottom-width: inherit;
+    top: 0;
+    left: 0;
+    animation: fill 1s linear infinite;
+}
+
+@keyframes fill {
+    0% {
+        transform: translate(0);
+    }
+    to {
+        transform: translate3d(900% ,0%, 0);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .bar {
+        transform: rotate(90deg);
+        width: 8rem;
+        margin: 4rem;
+    }
+}

@@ -1,0 +1,50 @@
+.container {
+    border-radius: 2rem;
+    min-height: 30vh;
+    min-width: 30vh;
+    display: grid;
+    grid-template-columns: 5vh 22vh 5vh;
+    grid-template-rows: 5vh 10vh 10vh auto;
+    background: #191c29;
+    border: 1px solid #58c7fa;
+}
+
+.item_1 {
+    font-size: 3rem;
+    color: rgb(61, 142, 178);
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    align-self: end;
+    justify-self: center;
+}
+
+.item_2 {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btnInc {
+    background:#5f9a2e;
+}
+
+.btnReset {
+    background:#d02211;
+}
+
+.item_1_color {
+    font-size: 3rem;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    align-self: end;
+    justify-self: center;
+    color:#d02211;
+}
+
+
+
+
+
+
+

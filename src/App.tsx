@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {CounterSettings} from "./Components/CounterSettings/CounterSettings";
+import {Counter} from "./Components/Counter/Counter";
+import {useDispatch} from "react-redux";
+import {ActionCreators} from "./Store/Reducers/CounterReducers/action-creators";
+import {Line} from "./Components/Line/Line";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const dispatch = useDispatch()
+
+    const changeCounterStartValue = (startValue: number) => {
+        dispatch(ActionCreators.setCounter(startValue))
+    }
+
+    const changeCounterMaxValue = (maxValue: number) => {
+        dispatch(ActionCreators.setCounterMaxValue(maxValue))
+    }
+
+    const incrementButton = (value: number) => {
+        dispatch(ActionCreators.incCounter(value))
+    }
+
+    const resetButton = (value: number) => {
+        dispatch(ActionCreators.resetCounter(value))
+    }
+
+    return (
+        <div className="App">
+            <CounterSettings changeCounter={changeCounterStartValue}
+                             changeCounterMaxValue={changeCounterMaxValue}
+            />
+            <Line/>
+            <Counter incrementButton={incrementButton}
+                     resetButton={resetButton}
+            />
+        </div>
+    );
 }
 
 export default App;
